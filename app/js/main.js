@@ -1,5 +1,5 @@
 requirejs.config({  
-    baseUrl: '',
+    baseUrl: '/',
     paths: {
         jquery      : 'js/tool/jquery.min',
         director    : 'js/tool/director',
