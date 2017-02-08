@@ -6,7 +6,7 @@ define(['jquery'], function($) {
     }
     view.prototype = {
         init: function(data) {
-            $('#page').html('<h1>'+data.title+'</h1><div>'+data.content+'</dv>')
+            //$('#page').html('<h1>'+data.title+'</h1><div>'+data.content+'</dv>')
         },
       
     }

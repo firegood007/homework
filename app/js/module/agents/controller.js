@@ -5,8 +5,8 @@ define(['js/module/agents/model', 'js/module/agents/view'], function(model, view
     }
     controller.prototype = {
         init:function() {
-            view = new view();
-            view.init(model);
+            var _view = new view();
+            _view.init(model);
         }
     }
     return controller;

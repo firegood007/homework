@@ -1,0 +1,130 @@
+body {
+	font-size: 16px;
+}
+.body{
+	padding: 30px;
+}
+.header {
+	font-size: 14px;
+	a{
+		color: @gray-base;
+		text-decoration: underline;
+		&:link, &:active{
+			color: @gray-base;
+		}
+	}
+	.signIn {
+		margin-right: 20px;
+	}
+}
+.section {
+	&>.title {
+		font-size: 40px;
+		margin-top: 0;
+	}
+	.navsMobile {
+		display: none;
+		@media (max-width: @screen-sm-min) {
+			display: block;
+			ul {
+				padding: 0;
+				margin-bottom: 0;
+				&:before {
+					clear: both;
+					content: '';
+				}
+			}
+			li{
+				height: 32px;
+				line-height: 32px;
+				display: inline-block;
+				vertical-align: bottom;
+				list-style: none;
+				margin-left: 5px;
+				text-transform: uppercase;
+				padding: 0 16px;
+				border: 2px solid @gray-base;
+				border-bottom: none;
+				border-radius: 13px 13px 0 0;
+				&:nth-child(1) {
+					margin-left: 0;
+				}
+				a {
+					color: @gray-base;
+					&:link, &:active {
+						color: @gray-base;
+					}
+					&:hover {
+						text-decoration: none;
+					}
+				}
+				&:hover, &.current{
+					height: 46px;
+					line-height: 46px;
+					background: @bg-hover;
+					a {
+						color: white;
+					}
+				}
+			}
+		}
+	}
+	.content {
+		position: relative;
+		border: 2px solid @gray-base;
+		margin: 0;
+		.navs {
+			@media (max-width: @screen-sm-min) {
+				display: none;
+			}
+			position: absolute;
+			top: -38px;
+			right: -2px;
+			ul {
+				height: 32px;
+				line-height: 32px;
+				padding: 0;
+				margin-bottom: 0;
+			}
+			li{
+				display: inline-block;
+				vertical-align: middle;
+				list-style: none;
+				margin-left: 5px;
+				text-transform: uppercase;
+				padding: 0 16px;
+				border: 2px solid @gray-base;
+				border-bottom: none;
+				border-radius: 13px 13px 0 0;
+				a {
+					color: @gray-base;
+					&:link, &:active {
+						color: @gray-base;
+					}
+					&:hover, &:visited, &:active{
+						text-decoration: none;
+					}
+				}
+				&:hover, &.current{
+					height: 46px;
+					line-height: 42px;
+					background: @bg-hover;
+					a {
+						color: white;
+					}
+				}
+			}
+		}
+		.head {
+			height: 50px;
+			line-height: 50px;
+			background: @bg-hover;
+			border-bottom: 2px solid @gray-base;
+			.title {
+				color: white;
+				font-size: 20px;
+			}
+		}
+		
+	}
+}
