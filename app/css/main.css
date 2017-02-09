@@ -9073,6 +9073,28 @@ button.close {
 .agents .right {
   padding: 15px;
 }
+.agents .title,
+.agents .agentsNav {
+  display: inline-block;
+}
+.agents .agentsNav {
+  margin-left: 15px;
+  line-height: 20px;
+}
+.agents .agentsNav span {
+  padding: 5px 0;
+  margin-right: 15px;
+  border: 2px solid #000;
+  border-radius: 18px;
+  display: inline-block;
+  text-align: center;
+  width: 80px;
+  background: #999999;
+  cursor: pointer;
+}
+.agents .agentsNav .navActive {
+  background: #DDDDDD;
+}
 .agents .left .idle {
   background: #CCE8B5;
 }

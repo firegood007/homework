@@ -1,9 +1,12 @@
 {{#if agents}}
 <div class="agents">
 	<div class="col-xs-12 agents-head head">
-			<div class="title">{{agents.page}}</div>
-			<div class="">
-			</div>
+		<div class="title">{{agents.page}}</div>
+		<div class="agentsNav">
+			<span>All</span>
+			<span class="navActive">Physical</span>
+			<span>Virtual</span>
+		</div>		
 	</div>
 	<div class="col-xs-12 agents-content">
 		<div class="row">

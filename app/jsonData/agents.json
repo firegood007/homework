@@ -1,6 +1,6 @@
 {
 	"agents":{
-		"page":"agents",
+		"page":"Agents",
 		"state":[{"status":"building","num":"2"},{"status":"idle","num":"2"}],
 		"history": [
 			{"historyList":"bjstdmngbr02/Acceptance_text"},
