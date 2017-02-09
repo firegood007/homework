@@ -1,7 +1,8 @@
 define(['jquery','handlebars'], function($,Handlebars) {
     'use strict';
     var view = function(){
-      this.container = $('#page');
+        this.pageTitle = $('#page').find('.pageTitle');
+        this.pageBody = $('#page').find('.pageBody');
     }
     view.prototype = {
         init: function(data) {
@@ -13,11 +14,13 @@ define(['jquery','handlebars'], function($,Handlebars) {
                 var html = Handlebars.compile(tpl);
                 html = html({myCruise: true});
                 self.clean();
-                self.container.html(html);
+                self.pageTitle.html(html);
+                self.pageBody.html('Will Develop');
             });
         },
         clean: function(){
-            this.container.empty();
+            this.pageTitle.empty();
+            this.pageBody.empty();
         }
     }
     return view;

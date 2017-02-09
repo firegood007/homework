@@ -1,7 +1,4 @@
-.agents {
-	.left, .right {
-		padding: 15px;
-	}
+.agentsHead {
 	.title, .agentsNav {
 		display: inline-block;
 	}
@@ -23,6 +20,17 @@
 			background: #DDDDDD
 		}
 	}
+}
+.agents-content {
+	&>div {
+		display: none;
+	}
+	.navActive {
+		display: block;
+	}
+	.left, .right {
+		padding: 15px;
+	}
 	.left {
 		.idle {
 			background: #CCE8B5;
@@ -34,7 +42,7 @@
 			border: 2px solid @gray-base;
 			border-radius: 5px;
 			margin: 0;
-			padding: 10px;
+			padding: 10px 0;
 			margin-bottom: 15px;
 		}
 		.listIcon {
@@ -50,9 +58,10 @@
 			}
 		}
 		.listInfor {
-			margin-left: -15px;
+			margin-left: 0;
 			@media (min-width: @screen-sm-min) {
-				width: calc(~"100% - 80px");
+				width: calc(~"100% - 65px");
+				margin-left: -15px;
 			}
 			.deny {
 				float: right;
@@ -114,7 +123,7 @@
 	}
 	.right {
 		border-left: 3px solid @gray-base;
-		@media (max-width: @screen-sm-min) {
+		@media (max-width: @screen-md-min) {
 			border-left: none;
 		}
 		.title {

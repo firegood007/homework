@@ -9,7 +9,7 @@ define([], function() {
                 url: URL,
                 type: 'get',
                 dataType: "html",
-                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                contentType: 'plain/x-www-form-urlencoded; charset=UTF-8',
                 success: function(data) {
                 	data = self.jsonParse(data);
                 	defer.resolve(data);

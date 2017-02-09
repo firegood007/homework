@@ -9069,19 +9069,15 @@ button.close {
   overflow: visible;
   clip: auto;
 }
-.agents .left,
-.agents .right {
-  padding: 15px;
-}
-.agents .title,
-.agents .agentsNav {
+.agentsHead .title,
+.agentsHead .agentsNav {
   display: inline-block;
 }
-.agents .agentsNav {
+.agentsHead .agentsNav {
   margin-left: 15px;
   line-height: 20px;
 }
-.agents .agentsNav span {
+.agentsHead .agentsNav span {
   padding: 5px 0;
   margin-right: 15px;
   border: 2px solid #000;
@@ -9092,122 +9088,133 @@ button.close {
   background: #999999;
   cursor: pointer;
 }
-.agents .agentsNav .navActive {
+.agentsHead .agentsNav .navActive {
   background: #DDDDDD;
 }
-.agents .left .idle {
+.agents-content > div {
+  display: none;
+}
+.agents-content .navActive {
+  display: block;
+}
+.agents-content .left,
+.agents-content .right {
+  padding: 15px;
+}
+.agents-content .left .idle {
   background: #CCE8B5;
 }
-.agents .left .building {
+.agents-content .left .building {
   background: #FFFBB9;
 }
-.agents .left .agentList {
+.agents-content .left .agentList {
   border: 2px solid #000;
   border-radius: 5px;
   margin: 0;
-  padding: 10px;
+  padding: 10px 0;
   margin-bottom: 15px;
 }
-.agents .left .listIcon {
+.agents-content .left .listIcon {
   width: 80px;
 }
 @media (max-width: 768px) {
-  .agents .left .listIcon {
+  .agents-content .left .listIcon {
     display: none;
   }
 }
-.agents .left .listIcon .roundIcon {
+.agents-content .left .listIcon .roundIcon {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   background: #929292;
 }
-.agents .left .listInfor {
-  margin-left: -15px;
+.agents-content .left .listInfor {
+  margin-left: 0;
 }
 @media (min-width: 768px) {
-  .agents .left .listInfor {
-    width: calc(100% - 80px);
+  .agents-content .left .listInfor {
+    width: calc(100% - 65px);
+    margin-left: -15px;
   }
 }
-.agents .left .listInfor .deny {
+.agents-content .left .listInfor .deny {
   float: right;
 }
 @media (max-width: 768px) {
-  .agents .left .listInfor .inforAdress > span {
+  .agents-content .left .listInfor .inforAdress > span {
     display: block;
   }
 }
-.agents .left .listInfor .inforAdress .inforAdresslist {
+.agents-content .left .listInfor .inforAdress .inforAdresslist {
   display: inline-block;
   padding: 0 5px;
   border-left: 1px solid #92A0A3;
 }
 @media (max-width: 768px) {
-  .agents .left .listInfor .inforAdress .inforAdresslist {
+  .agents-content .left .listInfor .inforAdress .inforAdresslist {
     display: block;
     padding-left: 20px;
     border-left: none;
   }
 }
-.agents .left .listInfor .inforAdress .inforAdressName {
+.agents-content .left .listInfor .inforAdress .inforAdressName {
   margin-right: 15px;
   font-weight: bold;
 }
 @media (max-width: 768px) {
-  .agents .left .listInfor .inforContent {
+  .agents-content .left .listInfor .inforContent {
     margin-top: 15px;
     padding-left: 35px;
   }
 }
-.agents .left .listInfor .inforContent .specSour {
+.agents-content .left .listInfor .inforContent .specSour {
   text-decoration: underline;
   cursor: pointer;
 }
-.agents .left .listInfor .inforContent .sourceTitle {
+.agents-content .left .listInfor .inforContent .sourceTitle {
   display: inline-block;
   padding-left: 5px;
   border-left: 1px solid #92A0A3;
 }
 @media (max-width: 768px) {
-  .agents .left .listInfor .inforContent .sourceTitle {
+  .agents-content .left .listInfor .inforContent .sourceTitle {
     border-left: none;
     padding: 0;
   }
 }
-.agents .left .listInfor .inforContent .source > span {
+.agents-content .left .listInfor .inforContent .source > span {
   margin-right: 20px;
 }
 @media (max-width: 768px) {
-  .agents .left .listInfor .inforContent .source > span {
+  .agents-content .left .listInfor .inforContent .source > span {
     display: block;
   }
 }
-.agents .left .listInfor .inforContent .source i {
+.agents-content .left .listInfor .inforContent .source i {
   color: #929292;
   cursor: pointer;
 }
-.agents .right {
+.agents-content .right {
   border-left: 3px solid #000;
 }
-@media (max-width: 768px) {
-  .agents .right {
+@media (max-width: 992px) {
+  .agents-content .right {
     border-left: none;
   }
 }
-.agents .right .title {
+.agents-content .right .title {
   font-size: 18px;
   font-weight: bold;
 }
-.agents .right .title div {
+.agents-content .right .title div {
   border-bottom: 2px solid #D0D0D0;
   padding: 10px 0;
 }
-.agents .right .historyList {
+.agents-content .right .historyList {
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.agents .right .serverContent > div {
+.agents-content .right .serverContent > div {
   padding: 5px 0px;
 }
 body {
@@ -9343,13 +9350,13 @@ body {
 .section .content .navs li.current a {
   color: white;
 }
-.section .content .head {
+.section .content .pageTitle {
   height: 50px;
   line-height: 50px;
   background: #606060;
   border-bottom: 3px solid #000;
 }
-.section .content .head .title {
+.section .content .pageTitle .title {
   color: white;
   font-size: 20px;
 }

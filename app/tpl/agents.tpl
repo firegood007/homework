@@ -1,15 +1,9 @@
 {{#if agents}}
-<div class="agents">
-	<div class="col-xs-12 agents-head head">
-		<div class="title">{{agents.page}}</div>
-		<div class="agentsNav">
-			<span>All</span>
-			<span class="navActive">Physical</span>
-			<span>Virtual</span>
-		</div>		
-	</div>
-	<div class="col-xs-12 agents-content">
-		<div class="row">
+	<div class="agents-content" id="tabsContent">
+		<div class="row all" data-tab="all">
+			<div class="col-xs-12">Will Develop</div>
+		</div>	
+		<div class="row physical navActive" data-tab="physical">
 			<div class="col-md-9 col-xs-12 left">
 				{{#each agents.server}}
 				<div class="agentList row {{bgcolor Deny}}">
@@ -34,7 +28,10 @@
 									<span>{{resourceList}} <i class="fa fa-times-circle-o"></i></span>
 									{{/each}}
 								</span>
-								<span class="deny {{render Deny}}"><i class="fa fa-ban"></i>Deny</span>
+								<span class="deny {{render Deny}}">
+									<i class="fa fa-ban"></i>
+									<span>Deny</span>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -73,6 +70,8 @@
 				</div>
 			</div>
 		</div>
+		<div class="row virtual" data-tab="virtual">
+			<div class="col-xs-12">Will Develop</div>
+		</div>
 	</div>
-</div>
 {{/if}}
