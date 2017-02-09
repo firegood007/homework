@@ -1,0 +1,117 @@
+.agents {
+	.left, .right {
+		padding: 15px;
+	}
+	.left {
+		.idle {
+			background: #CCE8B5;
+		}
+		.building {
+			background: #FFFBB9;
+		}
+		.agentList {
+			border: 2px solid @gray-base;
+			border-radius: 5px;
+			margin: 0;
+			padding: 10px;
+			margin-bottom: 15px;
+		}
+		.listIcon {
+			width: 80px;
+			@media (max-width: @screen-sm-min) {
+				display:none;
+			}
+			.roundIcon {
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background: #929292;
+			}
+		}
+		.listInfor {
+			margin-left: -15px;
+			@media (min-width: @screen-sm-min) {
+				width: calc(~"100% - 80px");
+			}
+			.deny {
+				float: right;
+			}
+			.inforAdress {
+				@media (max-width: @screen-sm-min) {
+					&>span {
+						display: block;
+					}
+				}
+				.inforAdresslist {
+					display:inline-block;
+					padding: 0 5px;
+					border-left: 1px solid #92A0A3;
+					@media (max-width: @screen-sm-min) {
+						display: block;
+						padding-left: 20px;
+						border-left: none;
+					}
+				}
+				.inforAdressName {
+					margin-right: 15px;
+					font-weight: bold;
+				}
+			}
+			.inforContent{
+				@media (max-width: @screen-sm-min) {
+					margin-top: 15px;
+					padding-left: 35px;
+				}
+				.specSour{
+					text-decoration: underline;
+					cursor: pointer;
+				}
+				.sourceTitle {
+					display: inline-block;
+					padding-left: 5px;
+					border-left: 1px solid #92A0A3; 
+					@media (max-width: @screen-sm-min) {
+						border-left: none;
+						padding: 0;
+					}
+				}
+				.source {
+					&>span {
+						margin-right: 20px;
+						@media (max-width: @screen-sm-min) {
+							display: block;
+						}
+					}
+					i{
+						color: #929292;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+
+	}
+	.right {
+		border-left: 3px solid @gray-base;
+		@media (max-width: @screen-sm-min) {
+			border-left: none;
+		}
+		.title {
+			font-size: 18px;
+			font-weight: bold;
+			div	{
+				border-bottom: 2px solid #D0D0D0;
+				padding: 10px 0;
+			}	
+		}
+		.historyList{
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+		.serverContent {
+			&>div {
+				padding: 5px 0px;
+			}
+		}
+	}
+}

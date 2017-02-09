@@ -1,19 +1,25 @@
-requirejs.config({  
+requirejs.config({
     baseUrl: '/',
     paths: {
         jquery      : 'js/tool/jquery.min',
         director    : 'js/tool/director',
         handlebars  : 'js/tool/handlebars-v4.0.5',
         router      : 'js/router',
-        agents      : 'js/module/agents/controller'
+        common      : 'js/common',
+        agents      : 'js/module/agents/controller',
+        dashboard   : 'js/module/dashboard/controller',
+        myCruise    : 'js/module/myCruise/controller',
+        help        : 'js/module/help/controller'
+
     },
     shim: {
-        handlebars: {  
-            exports: 'Handlebars'  
+        handlebars: {
+            exports: 'Handlebars'
         },
-    }    
+    }
 });
 
-require(['router'], function(router) {
+require(['jquery','router','common'], function($,router) {
+    window.$ = $ || jQuery;
     router.init('/');
 });

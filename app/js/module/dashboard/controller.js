@@ -1,4 +1,4 @@
-define(['js/module/agents/model', 'js/module/agents/view'], function(model, view) {
+define(['js/module/dashboard/model', 'js/module/dashboard/view'], function(model, view) {
     'use strict';
     var controller = function() {
         this.init();
@@ -6,10 +6,8 @@ define(['js/module/agents/model', 'js/module/agents/view'], function(model, view
     controller.prototype = {
         init:function() {
             var _view = new view();
-            model.getData().done(function(data){
-                _view.init(data);
-            })   
-        },
+            _view.init(model);
+        }
     }
     return controller;
 });
