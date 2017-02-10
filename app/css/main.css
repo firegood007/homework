@@ -9077,6 +9077,11 @@ button.close {
   margin-left: 15px;
   line-height: 20px;
 }
+@media (max-width: 768px) {
+  .agentsHead .agentsNav {
+    margin-left: 0;
+  }
+}
 .agentsHead .agentsNav span {
   padding: 5px 0;
   margin-right: 15px;
@@ -9087,6 +9092,13 @@ button.close {
   width: 80px;
   background: #999999;
   cursor: pointer;
+}
+@media (max-width: 768px) {
+  .agentsHead .agentsNav span {
+    font-size: 14px;
+    width: 65px;
+    margin-right: 0;
+  }
 }
 .agentsHead .agentsNav .navActive {
   background: #DDDDDD;
@@ -9100,6 +9112,14 @@ button.close {
 .agents-content .left,
 .agents-content .right {
   padding: 15px;
+}
+@media (max-width: 768px) {
+  .agents-content .addSources {
+    margin-left: -15px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
 }
 .agents-content .left .idle {
   background: #CCE8B5;

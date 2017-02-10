@@ -21,7 +21,7 @@
 						</div>
 						<div class="row">
 							<div class="col-xs-12 inforContent">
-								<span>+ <span class="specSour">Specify Resources</span></span>
+								<span class="addSources">+ <span class="specSour">Specify Resources</span></span>
 								<span class="sourceTitle">Resources:</span>
 								<span class="source">
 									{{#each this.resources}}

@@ -1,9 +1,6 @@
 define([], function(Model) {
     'use strict';
 
-    var model = {
-        title: 'agents',
-        content: 'agents contents'
-    }
+    var model = {help: true};
     return model;
 });

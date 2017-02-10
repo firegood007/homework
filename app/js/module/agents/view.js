@@ -1,16 +1,6 @@
-define(['handlebars'], function(Handlebars) {
-    'use strict';
-    var agents = {
-          tpl: {
-              pageTitle: 'tpl/agentsHead.tpl',
-              pageBody: 'tpl/agents.tpl'
-          },
-          dom: {
-              pageTitle: $('.pageTitle'),
-              pageBody: $('.pageBody')
-          }
-    },    
-    view = function(){ };
+define(['handlebars','pageSet'], function(Handlebars,Page) {
+    'use strict'; 
+    var view = function(){ };
     view.prototype = {
         init: function(data) {
             this.data = data;
@@ -18,16 +8,16 @@ define(['handlebars'], function(Handlebars) {
         },
         showTitle: function() {
             var self = this,
-            path = agents.tpl.pageTitle,
-            element = agents.dom.pageTitle;
+            path = Page.tpl.agents.pageTitle,
+            element = Page.dom.pageTitle;
             this.getHtml(path,element,{agentsHead: true},function(){
                 self.showContent(self.data);
             })
         },
         showContent: function(data) {
             var self = this,
-            path = agents.tpl.pageBody,
-            element = agents.dom.pageBody;
+            path = Page.tpl.agents.pageBody,
+            element = Page.dom.pageBody;
             this.getHtml(path,element,data,function(){
                 self.events();
             })
@@ -105,7 +95,6 @@ define(['handlebars'], function(Handlebars) {
                             pop.resize($mask);
                             $mask.fadeIn(300);
                         }
-
                         $mask.off('click').on('click',function(e){
                             e.preventDefault();
                             e.stopPropagation();

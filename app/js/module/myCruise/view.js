@@ -1,26 +1,24 @@
-define(['jquery','handlebars'], function($,Handlebars) {
+define(['handlebars','pageSet'], function(Handlebars,Page) {
     'use strict';
-    var view = function(){
-        this.pageTitle = $('#page').find('.pageTitle');
-        this.pageBody = $('#page').find('.pageBody');
-    }
+    var view = function(){ }
     view.prototype = {
         init: function(data) {
-          this.show();
+          this.show(data);
         },
-        show: function(){
-          var self = this;
-          $.get('tpl/myCruise.tpl', function(tpl) {
+        show: function(data){
+          var self = this,
+          path = Page.tpl.myCruise.page;
+          $.get(path, function(tpl) {
                 var html = Handlebars.compile(tpl);
-                html = html({myCruise: true});
+                html = html(data);
                 self.clean();
-                self.pageTitle.html(html);
-                self.pageBody.html('Will Develop');
+                Page.dom.pageTitle.html(html);
+                Page.dom.pageBody.html('Will Develop');
             });
         },
         clean: function(){
-            this.pageTitle.empty();
-            this.pageBody.empty();
+            Page.dom.pageTitle.empty();
+            Page.dom.pageBody.empty();
         }
     }
     return view;

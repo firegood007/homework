@@ -2,8 +2,7 @@ define([], function(Model) {
     'use strict';
 
     var model = {
-        title: 'agents',
-        content: 'agents contents'
+        dashboard: true
     }
     return model;
 });

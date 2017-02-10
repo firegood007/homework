@@ -40,6 +40,14 @@ define(['handlebars'],function(Handlebars){
 			    });    
 			    return this;
 			};
+		},
+		config: function(){
+	        $.pages = {
+	        	dom: {
+	        		pageTitle: $('.pageTitle'),
+	            	pageBody: $('.pageBody')
+	        	}
+	        }
 		}
 	}
 	for(var handle in common) {

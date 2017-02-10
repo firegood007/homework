@@ -6,6 +6,7 @@ requirejs.config({
         handlebars  : 'js/tool/handlebars-v4.0.5',
         router      : 'js/router',
         common      : 'js/common',
+        pageSet     : 'js/pageSet',
         agents      : 'js/module/agents/controller',
         dashboard   : 'js/module/dashboard/controller',
         myCruise    : 'js/module/myCruise/controller',
