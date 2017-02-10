@@ -4,6 +4,9 @@ define(['handlebars'],function(Handlebars){
 		navEvents: function() {
 			var navHandle = function(){
 				var currentUrl = location.hash.slice(2);
+				if(!currentUrl) {
+					return;
+				}
 				$('.navs,.navsMobile').find('li').removeClass('current');
 				$('.navs,.navsMobile').find('.'+currentUrl).addClass('current');
 			}
