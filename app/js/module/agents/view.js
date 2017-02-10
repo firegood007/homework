@@ -51,10 +51,97 @@ define(['handlebars'], function(Handlebars) {
                 $(this).closest('span').remove();
             })
         },
-        add: function(){
-            $('.specSour').on('click',function(){
-                alert(1);
+        add: function() {
+            var self = this;
+            $('.specSour').bind('click',function(e){
+                if($(this).is('.specSour')) {
+                    self.pop($(this));
+                }
             })
+        },
+        pop: function(addSource) {
+            var pop = {
+                create: function(){
+                    var $html = $('<div />',{class: 'pop'})
+                        .append(
+                            $('<div />',{class: 'popHead',html: '(separate multiple resources name with commas)'})
+                        ).append(
+                            $('<input />',{class: 'popText',type: 'text'})
+                        ).append(
+                            $('<div />',{class: 'btnGroup'})
+                            .append (
+                                $('<button />',{class: 'confirm',html:'Add reSources'})
+                            ).append(
+                                $('<button />',{class: 'closePop',html:'Close'})
+                            ).append(
+                                $('<span />',{class: 'errorMes hide',html:'* Please set inputText.'})
+                            )
+                        ).append(
+                            $('<div />',{class: 'arrowPoint'})
+                        );
+                    return $html;
+                },
+                resize: function($mask) {
+                    var setWidth = function(){
+                        var width = $mask.closest('.agentList ').width();
+                        $mask.width(width*0.75);
+                    };
+                    setWidth();
+                    $(window).resize(function(){
+                        setWidth();
+                    });
+                },
+                mask: {
+                    open: function() {
+                        var self = this,
+                        $mask = pop.create();
+                        $('.maskAgent').removeClass('hide');
+                        if(addSource.find('.pop').length){
+                            $mask = addSource.find('.pop');
+                            pop.resize($mask);
+                            $mask.fadeIn(300);
+                        } else {
+                            addSource.append($mask);
+                            pop.resize($mask);
+                            $mask.fadeIn(300);
+                        }
+
+                        $mask.off('click').on('click',function(e){
+                            e.preventDefault();
+                            e.stopPropagation();
+                        }).on('click','.closePop',function(e){
+                            self.close($mask);
+                        }).on('click','.confirm',function(e){
+                            self.confirm($mask);
+                        }).on('input','.popText',function(e){
+                            var text = $(this).val();
+                            text && $mask.find('.errorMes').addClass('hide');
+                        });
+                    },
+                    close: function($mask) {
+                        $mask.find('.popText').val('');
+                        $mask.fadeOut(200,function(){
+                            $mask.find('.errorMes').addClass('hide');
+                            $('.maskAgent').addClass('hide');
+                        }); 
+                    },
+                    confirm: function($mask){
+                        var $input = $mask.find('.popText');
+                        if($input.val()) {
+                            $mask.closest('.inforContent').find('.source').append(
+                                $('<span />',{html:$input.val()}).append(
+                                    $('<i />',{class: 'fa fa-times-circle-o'})
+                                )
+                            )
+                           this.close($mask);
+                        } else {
+                            $input.focus();
+                            $mask.find('.errorMes').removeClass('hide');
+                        }   
+                    }
+                }
+            }
+            pop.mask.open();
         }
     }
     return view;

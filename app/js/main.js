@@ -21,5 +21,5 @@ requirejs.config({
 
 require(['jquery','router','common'], function($,router) {
     window.$ = $ || jQuery;
-    router.init('/');
+    router.init('/agents');
 });
