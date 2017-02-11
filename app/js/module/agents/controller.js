@@ -8,7 +8,8 @@ define(['js/module/agents/model', 'js/module/agents/view'], function(model, view
             var _view = new view();
             model.getData().then(function(data){
                 _view.init(data);
-            })   
+            }) 
+            return true;  
         },
     }
     return controller;

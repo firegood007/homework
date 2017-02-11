@@ -8,17 +8,17 @@ define([],function(){
 		},
 		tpl: {
 			agents: {
-				pageTitle: 'tpl/agentsHead.tpl',
-              	pageBody: 'tpl/agents.tpl'
+				pageTitle: 'tpl/agentsHead.html',
+              	pageBody: 'tpl/agents.html'
 			},
 			dashboard: {
-				page: 'tpl/dashboard.tpl',
+				page: 'tpl/dashboard.html',
 			},
 			help: {
-				page: 'tpl/help.tpl',
+				page: 'tpl/help.html',
 			},
 			myCruise: {
-				page: 'tpl/myCruise.tpl',
+				page: 'tpl/myCruise.html',
 			}
 		}
 	}

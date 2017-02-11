@@ -64,7 +64,7 @@ define(['handlebars','pageSet'], function(Handlebars,Page) {
                             ).append(
                                 $('<button />',{class: 'closePop',html:'Close'})
                             ).append(
-                                $('<span />',{class: 'errorMes hide',html:'* Please set inputText.'})
+                                $('<span />',{class: 'errorMes hide',html:''})
                             )
                         ).append(
                             $('<div />',{class: 'arrowPoint'})
@@ -116,16 +116,30 @@ define(['handlebars','pageSet'], function(Handlebars,Page) {
                     },
                     confirm: function($mask){
                         var $input = $mask.find('.popText');
-                        if($input.val()) {
-                            $mask.closest('.inforContent').find('.source').append(
-                                $('<span />',{html:$input.val()}).append(
-                                    $('<i />',{class: 'fa fa-times-circle-o'})
-                                )
-                            )
-                           this.close($mask);
-                        } else {
+                        var reset = function(message){
                             $input.focus();
-                            $mask.find('.errorMes').removeClass('hide');
+                            $mask.find('.errorMes').html(message).removeClass('hide');
+                        }
+                        var mes = {
+                          noMes: '* Please input content.',
+                          xss: '*Special characters are not allowed.',
+                          lengths: 'Limit 20 characters.'
+                        }
+                        if($input.val()) {
+                            if((/\<.*>/).test($input.val())){
+                                reset(mes.xss);
+                            }else if($input.val().length > 20) {
+                                reset(mes.lengths);
+                            } else {
+                                $mask.closest('.inforContent').find('.source').append(
+                                    $('<span />',{html:$input.val()}).append(
+                                        $('<i />',{class: 'fa fa-times-circle-o'})
+                                    )
+                                )
+                                this.close($mask);
+                            }    
+                        } else {
+                            reset(mes.noMes);
                         }   
                     }
                 }

@@ -9262,57 +9262,9 @@ body {
   font-size: 40px;
   margin-top: 0;
 }
-.section .navsMobile {
-  display: none;
-}
 @media (max-width: 768px) {
-  .section .navsMobile {
-    display: block;
-  }
-  .section .navsMobile ul {
-    padding: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-  }
-  .section .navsMobile ul:before {
-    clear: both;
-    content: '';
-  }
-  .section .navsMobile li {
-    height: 32px;
-    line-height: 32px;
-    display: inline-block;
-    vertical-align: bottom;
-    list-style: none;
-    margin-left: 0;
-    text-transform: uppercase;
-    padding: 0 2px;
-    border: 3px solid #000;
-    border-bottom: none;
-    border-radius: 13px 13px 0 0;
-  }
-  .section .navsMobile li:nth-child(1) {
-    margin-left: 0;
-  }
-  .section .navsMobile li a {
-    color: #000;
-  }
-  .section .navsMobile li a:link,
-  .section .navsMobile li a:active {
-    color: #000;
-  }
-  .section .navsMobile li a:hover {
-    text-decoration: none;
-  }
-  .section .navsMobile li:hover,
-  .section .navsMobile li.current {
-    height: 46px;
-    line-height: 46px;
-    background: #606060;
-  }
-  .section .navsMobile li:hover a,
-  .section .navsMobile li.current a {
-    color: white;
+  .section > .title {
+    margin-bottom: 30px;
   }
 }
 .section .content {
@@ -9324,11 +9276,6 @@ body {
   position: absolute;
   top: -38px;
   right: -2px;
-}
-@media (max-width: 768px) {
-  .section .content .navs {
-    display: none;
-  }
 }
 .section .content .navs ul {
   height: 32px;
@@ -9342,12 +9289,14 @@ body {
   list-style: none;
   margin-left: 5px;
   text-transform: uppercase;
-  padding: 0 16px;
   border: 3px solid #000;
   border-bottom: none;
   border-radius: 13px 13px 0 0;
 }
 .section .content .navs li a {
+  display: inline-block;
+  text-align: center;
+  padding: 0 16px;
   color: #000;
 }
 .section .content .navs li a:link,
@@ -9360,6 +9309,12 @@ body {
 .section .content .navs li a:hover,
 .section .content .navs li a:active {
   text-decoration: none;
+}
+@media (max-width: 768px) {
+  .section .content .navs li a {
+    font-size: 14px;
+    padding: 0 5px;
+  }
 }
 .section .content .navs li:hover,
 .section .content .navs li.current {
