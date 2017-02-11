@@ -129,13 +129,13 @@ define(['handlebars','pageSet'], function(Handlebars,Page) {
                           lengths: 'Limit 20 characters.'
                         }
                         if($input.val()) {
-                            if((/\<.*>/).test($input.val())){
+                            if((/(<.*>|nbsp)/).test($input.val())){
                                 reset(mes.xss);
                             }else if($input.val().length > 20) {
                                 reset(mes.lengths);
                             } else {
                                 $mask.closest('.inforContent').find('.source').append(
-                                    $('<span />',{html:$input.val()}).append(
+                                    $('<span />',{html:$input.val()+'&nbsp;'}).append(
                                         $('<i />',{class: 'fa fa-times-circle-o'})
                                     )
                                 )
