@@ -195,7 +195,9 @@
 150
 151
 152
-153</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+153
+154
+155</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -221,6 +223,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -317,6 +320,7 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -353,15 +357,15 @@
     view.prototype = {
         init: function(data) {
             this.data = data;
-            this.showTitle();
+            this.showTitle();  //加载 页面title
             return true;
         },
         showTitle: function() {
             var self = this,
-            path = Page.tpl.agents.pageTitle,
+            path = Page.tpl.agents.pageTitle, //从配置文件取出页面地址配置。
             element = Page.dom.pageTitle;
             this.getHtml(path,element,{agentsHead: true},<span class="fstat-no" title="function not covered" >function(){</span>
-<span class="cstat-no" title="statement not covered" >                self.showContent(self.data);</span>
+<span class="cstat-no" title="statement not covered" >                self.showContent(self.data); </span>// 加载页面内容
             })
         },
         showContent: <span class="fstat-no" title="function not covered" >function(data) {</span>
@@ -369,9 +373,10 @@
             path = Page.tpl.agents.pageBody,
             element = Page.dom.pageBody;
 <span class="cstat-no" title="statement not covered" >            this.getHtml(path,element,data,<span class="fstat-no" title="function not covered" >function(){</span></span>
-<span class="cstat-no" title="statement not covered" >                self.events();</span>
+<span class="cstat-no" title="statement not covered" >                self.events(); </span>// 绑定事件
             })
         },
+        // 利用 模板和数据 生成 html 字符， 回调函数放dom 操作逻辑
         getHtml: function(path,element,data,callback) {
             $.get(path,<span class="fstat-no" title="function not covered" >function(tpl){</span>
 <span class="cstat-no" title="statement not covered" >                tpl = Handlebars.compile(tpl);</span>
@@ -382,9 +387,9 @@
             });
         },
         events: <span class="fstat-no" title="function not covered" >function() {</span>
-<span class="cstat-no" title="statement not covered" >            $('#tabs').tabs('#tabsContent');</span>
-<span class="cstat-no" title="statement not covered" >            this.del();</span>
-<span class="cstat-no" title="statement not covered" >            this.add();</span>
+<span class="cstat-no" title="statement not covered" >            $('#tabs').tabs('#tabsContent'); </span> // $.fn.tabs 扩展与 common.js
+<span class="cstat-no" title="statement not covered" >            this.del(); </span> //删除功能
+<span class="cstat-no" title="statement not covered" >            this.add(); </span> //添加功能
         },
         del: <span class="fstat-no" title="function not covered" >function() {</span>
 <span class="cstat-no" title="statement not covered" >            $('.agentList').find('.source').on('click','i',<span class="fstat-no" title="function not covered" >function(){</span></span>
@@ -395,11 +400,11 @@
 <span class="cstat-no" title="statement not covered" >            var self = this;</span>
 <span class="cstat-no" title="statement not covered" >            $('.specSour').bind('click',<span class="fstat-no" title="function not covered" >function(e){</span></span>
 <span class="cstat-no" title="statement not covered" >                if($(this).is('.specSour')) {</span>
-<span class="cstat-no" title="statement not covered" >                    self.pop($(this));</span>
+<span class="cstat-no" title="statement not covered" >                    self.pop($(this)); </span>//弹窗。
                 }
             })
         },
-        pop: <span class="fstat-no" title="function not covered" >function(addSource) {</span>
+        pop: <span class="fstat-no" title="function not covered" >function(addSource) {</span>  // 弹窗封装。
 <span class="cstat-no" title="statement not covered" >            var pop = {</span>
                 create: <span class="fstat-no" title="function not covered" >function(){</span>
 <span class="cstat-no" title="statement not covered" >                    var $html = $('&lt;div /&gt;',{class: 'pop'})</span>
@@ -470,6 +475,7 @@
 <span class="cstat-no" title="statement not covered" >                            $input.focus();</span>
 <span class="cstat-no" title="statement not covered" >                            $mask.find('.errorMes').html(message).removeClass('hide');</span>
                         }
+                        // 验证 输出信息。
 <span class="cstat-no" title="statement not covered" >                        var mes = {</span>
                           noMes: '* Please input content.',
                           xss: '*Special characters are not allowed.',
@@ -505,7 +511,7 @@
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Feb 11 2017 13:16:29 GMT+0800 (中国标准时间)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Feb 11 2017 20:35:15 GMT+0800 (中国标准时间)
 </div>
 </div>
 <script src="../../../prettify.js"></script>
