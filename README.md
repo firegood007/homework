@@ -37,3 +37,5 @@ homework/app/js/common.js    :  页面的初始化处理
 homework/app/js/router.js    :  配置页面路由
 homework/app/js/pageSet.js   :  存放每一个page的相关信息。
 homework/app/js/main.js      :  requirejs 的配置
+
+github地址                   :  https://github.com/firegood007/homework
