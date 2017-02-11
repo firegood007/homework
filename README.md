@@ -16,6 +16,9 @@
 5 cd app
   karma start
 
+(测试文件地址    : homework/app/files/)
+(查看覆盖率地址  : homework/app/files/coverage/Chrome 40.02214/index.html)
+
 
 技术要点说明:
 
