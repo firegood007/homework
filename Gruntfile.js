@@ -40,4 +40,7 @@ module.exports = function(grunt){
     grunt.registerTask('watchs','watch files',function(){
         grunt.task.run(['less','watch:copy'])
     })
+	grunt.registerTask('default','build',function(){
+        grunt.task.run(['less'])
+    })
 }
