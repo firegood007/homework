@@ -53,5 +53,5 @@ define(['handlebars'],function(Handlebars){
 	for(var handle in common) {
 		common[handle]();
 	}
-	
+	return common;
 })

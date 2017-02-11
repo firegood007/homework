@@ -5,6 +5,7 @@ define(['handlebars','pageSet'], function(Handlebars,Page) {
         init: function(data) {
             this.data = data;
             this.showTitle();
+            return true;
         },
         showTitle: function() {
             var self = this,
