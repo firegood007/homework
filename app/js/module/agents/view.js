@@ -4,15 +4,15 @@ define(['handlebars','pageSet'], function(Handlebars,Page) {
     view.prototype = {
         init: function(data) {
             this.data = data;
-            this.showTitle();
+            this.showTitle();  //加载 页面title
             return true;
         },
         showTitle: function() {
             var self = this,
-            path = Page.tpl.agents.pageTitle,
+            path = Page.tpl.agents.pageTitle, //从配置文件取出页面地址配置。
             element = Page.dom.pageTitle;
             this.getHtml(path,element,{agentsHead: true},function(){
-                self.showContent(self.data);
+                self.showContent(self.data); // 加载页面内容
             })
         },
         showContent: function(data) {
@@ -20,9 +20,10 @@ define(['handlebars','pageSet'], function(Handlebars,Page) {
             path = Page.tpl.agents.pageBody,
             element = Page.dom.pageBody;
             this.getHtml(path,element,data,function(){
-                self.events();
+                self.events(); // 绑定事件
             })
         },
+        // 利用 模板和数据 生成 html 字符， 回调函数放dom 操作逻辑
         getHtml: function(path,element,data,callback) {
             $.get(path,function(tpl){
                 tpl = Handlebars.compile(tpl);
@@ -33,9 +34,9 @@ define(['handlebars','pageSet'], function(Handlebars,Page) {
             });
         },
         events: function() {
-            $('#tabs').tabs('#tabsContent');
-            this.del();
-            this.add();
+            $('#tabs').tabs('#tabsContent');  // $.fn.tabs 扩展与 common.js
+            this.del();  //删除功能
+            this.add();  //添加功能
         },
         del: function() {
             $('.agentList').find('.source').on('click','i',function(){
@@ -46,11 +47,11 @@ define(['handlebars','pageSet'], function(Handlebars,Page) {
             var self = this;
             $('.specSour').bind('click',function(e){
                 if($(this).is('.specSour')) {
-                    self.pop($(this));
+                    self.pop($(this)); //弹窗。
                 }
             })
         },
-        pop: function(addSource) {
+        pop: function(addSource) {  // 弹窗封装。
             var pop = {
                 create: function(){
                     var $html = $('<div />',{class: 'pop'})
@@ -121,6 +122,7 @@ define(['handlebars','pageSet'], function(Handlebars,Page) {
                             $input.focus();
                             $mask.find('.errorMes').html(message).removeClass('hide');
                         }
+                        // 验证 输出信息。
                         var mes = {
                           noMes: '* Please input content.',
                           xss: '*Special characters are not allowed.',

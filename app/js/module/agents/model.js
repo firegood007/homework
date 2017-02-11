@@ -2,6 +2,7 @@ define([], function() {
     'use strict';
     var URL = 'jsonData/agents.json';
     var model = {
+        //ajax 获取数据， 返回一个promsie对象， 当deferred resolve（） ，调用的then 就触发
     	getData: function(){
     		var self = this;
     		var defer = $.Deferred();
@@ -20,6 +21,7 @@ define([], function() {
             });
     		return defer.promise();
     	},
+        // json数据转化 object
         jsonParse: function(str) {
             var data;
             try {

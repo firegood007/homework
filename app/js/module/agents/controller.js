@@ -5,6 +5,7 @@ define(['js/module/agents/model', 'js/module/agents/view'], function(model, view
     }
     controller.prototype = {
         init:function() {
+            //从 model 获取数据, promise.then
             var _view = new view();
             model.getData().then(function(data){
                 _view.init(data);

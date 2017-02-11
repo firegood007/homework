@@ -17,8 +17,9 @@
   karma start
 
 
-技术要点说明：
+技术要点说明:
 
+设计模式       :    MVC模式
 模块管理       :    requirejs
 自动化构建     :    grunt
 单元测试       :    karma + jasmine
@@ -30,3 +31,9 @@
 图标文件       :    fontawesome
 
 
+homework/app/js/moudle/      :  存放每一个page的模块
+homework/app/js/tool/        :  存放第三方库文件
+homework/app/js/common.js    :  页面的初始化处理
+homework/app/js/router.js    :  配置页面路由
+homework/app/js/pageSet.js   :  存放每一个page的相关信息。
+homework/app/js/main.js      :  requirejs 的配置
