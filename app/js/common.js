@@ -1,4 +1,4 @@
-define(['handlebars'],function(Handlebars){
+define(['handlebars','jquery'],function(Handlebars,$){
 	'use strict';
 	var common = {
 		navEvents: function() {
@@ -37,7 +37,7 @@ define(['handlebars'],function(Handlebars){
 			        control.find('[data-tab]').removeClass('navActive');
 			        $(this).addClass('navActive');
 			        control.find('[data-tab='+tabName+']').addClass('navActive');
-			    });    
+			    });
 			    return this;
 			};
 		},
